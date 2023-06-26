@@ -1,0 +1,20 @@
+title: A Travel Blog
+logo:
+url: https://travel.dedunu.info
+baseurl:
+
+sass:
+  sass_dir: _sass
+
+author_name: "Dedunu Dhananjaya"
+author_url: "https://dedunu.info"
+author_image: dedunu.jpeg
+
+paginate: 5
+paginate_path: '/blog/page:num/'
+plugins: [jekyll-paginate]
+
+permalink: pretty
+markdown: kramdown
+kramdown:
+    auto_ids: false

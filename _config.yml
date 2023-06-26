@@ -3,6 +3,8 @@ logo:
 url: https://dedunu.click
 baseurl:
 
+cdn: https://cdn.dedunu.info
+
 sass:
   sass_dir: _sass
 

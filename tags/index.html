@@ -7,7 +7,7 @@ featured_image: 2022-04-23-23-april-2022.jpeg
     <div class="inner">
         <article class="post">
             <div class="post-thumbnail">
-                <img src="{{ "/travel/images/" | append: page.featured_image | prepend: cdn }}" alt="{% if page.featured_image_alt %}{{ page.featured_image_alt }}{% else %}{{ page.title }}{% endif %}">
+                <img src="{{ "/travel/images/" | append: page.featured_image | prepend: site.cdn }}" alt="{% if page.featured_image_alt %}{{ page.featured_image_alt }}{% else %}{{ page.title }}{% endif %}">
             </div><!-- .post-thumbnail -->
             <div class="entry-box">
                 <header class="entry-header">

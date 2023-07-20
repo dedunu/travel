@@ -12,7 +12,7 @@ author_name: "Dedunu Dhananjaya"
 author_url: "https://dedunu.info"
 author_image: dedunu.jpeg
 
-paginate: 3
+paginate: 1
 paginate_path: '/blog/page:num/'
 plugins: [jekyll-paginate]
 

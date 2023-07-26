@@ -1,8 +1,38 @@
 ---
 layout: default
 ---
+{% for page in site.posts limit:1 %}
 <main class="content fade-in-down delay-0_75s">
     <div class="inner">
-        {% include loop.html %}
+        <article class="post">
+            {% if page.featured_image %}
+            <div class="post-thumbnail"><img src="{{ "/travel/images/" | append: page.featured_image | prepend: site.cdn }}" alt="{% if page.featured_image_alt %}{{ page.featured_image_alt }}{% else %}{{ page.title }}{% endif %}" /></div>
+            {% endif %}
+            <div class="entry-box">
+                <header class="entry-header">
+                    <h1 class="entry-title">{{ page.title }}</h1>
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    {{content}}
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    {% if page.tags.size > 0 %}
+                    <div class="post-tags">
+                        {% for tag in page.tags %}<a href="{{ site.baseurl }}/tags/index.html#{{ tag | cgi_escape }}" rel="tag">#{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+                    </div>
+                    {% endif %}
+                </footer><!-- .entry-footer -->
+            </div><!-- .entry-box -->
+        </article><!-- .post -->
+        <nav class="post-nav">
+            <h2 class="screen-reader-text">Post navigation</h2>
+            {% if page.previous.url %}
+            <a href="{{ site.baseurl }}{{page.previous.url}}" class="nav-previous">Previous Post</a>
+            {% endif %}
+            {% if page.next.url %}
+            <a href="{{ site.baseurl }}{{page.next.url}}">Next Post</a>
+            {% endif %}
+        </nav><!-- .post-nav -->
     </div><!-- .inner -->
 </main><!-- .content -->
+{% end %}

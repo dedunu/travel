@@ -12,3 +12,9 @@ permalink: pretty
 markdown: kramdown
 kramdown:
     auto_ids: false
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-paginate

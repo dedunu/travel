@@ -1,15 +1,29 @@
 ---
 layout: default
-title: '#Tags'
+title: 'Archive'
 featured_image: 2022-04-23-23-april-2022.jpeg
 ---
-<h1>Archive of posts from {{ site.date | date: "%Y" }}</h1>
 
-<ul class="posts">
-{% for post in site.posts %}
-  <li>
-    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+<main class="content fade-in-down delay-0_75s">
+    <div class="inner">
+        <article class="post">
+            <div class="post-thumbnail">
+                <img src="{{ "/travel/images/" | append: page.featured_image | prepend: site.cdn }}" alt="{% if page.featured_image_alt %}{{ page.featured_image_alt }}{% else %}{{ page.title }}{% endif %}">
+            </div><!-- .post-thumbnail -->
+            <div class="entry-box">
+                <header class="entry-header">
+                    <h1 class="entry-title">{{page.title}}</h1>
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                  <ul class="posts">
+                  {% for post in site.posts %}
+                    <li>
+                      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </li>
+                  {% endfor %}
+                  </ul>
+                </div><!-- .entry-content -->
+            </div><!-- .entry-box -->
+        </article><!-- .post -->
+    </div><!-- .inner -->
+</main><!-- .content -->

@@ -15,10 +15,10 @@ featured_image: 2022-04-23-23-april-2022.jpeg
                     <h1 class="entry-title">{{page.title}}</h1>
                 </header><!-- .entry-header -->
                 <div class="entry-content">
-                  <ul class="posts">
+                  <ul class="archive-posts-list">
                   {% for post in site.posts %}
                     <li>
-                      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                      <a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a><span class="archive-meta"></span>
                     </li>
                   {% endfor %}
                   </ul>
